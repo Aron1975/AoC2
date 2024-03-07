@@ -1,26 +1,27 @@
 package Nissehierarki
 
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test
 
+//Nissehierarki test i Kotlin
 class NisseHierarkiTest {
 
     val nh = NisseHierarki()
 
     val uTomten = listOf("Tröger", "Trötter", "Blyger", "Dammråttan", "Skumtomten", "Glader",
     "Butter", "Rådjuret", "Nyckelpigan", "Haren", "Räven", "Gråsuggan", "Myran", "Bladlusen")
-    val uGlader = listOf("Tröger", "Trötter", "Blyger", "Dammråttan", "Skumtomten");
+    val uGlader = listOf("Tröger", "Trötter", "Blyger", "Dammråttan", "Skumtomten")
     val uButter = listOf("Rådjuret", "Nyckelpigan", "Haren", "Räven", "Gråsuggan", "Myran",
-    "Bladlusen");
-    val uTrötter = listOf("Dammråttan", "Skumtomten");
-    val uSkumtomten = listOf("Dammråttan");
-    val uRäven = listOf("Gråsuggan", "Myran", "Bladlusen");
-    val uMyran = listOf("Bladlusen");
+    "Bladlusen")
+    val uTrötter = listOf("Dammråttan", "Skumtomten")
+    val uSkumtomten = listOf("Dammråttan")
+    val uRäven = listOf("Gråsuggan", "Myran", "Bladlusen")
+    val uMyran = listOf("Bladlusen")
 
 
     @Test
     fun getUnderlingsBladlusenTest(){
-        var list: MutableList<String> = mutableListOf()
+        val list: MutableList<String> = mutableListOf()
         val underlings: MutableList<String>? = nh.getTomteHierarki("Bladlusen", nh.nisseMapByName, list)
         if (underlings != null) {
             assertEquals(underlings.size, 0)
@@ -29,7 +30,7 @@ class NisseHierarkiTest {
 
     @Test
     fun getUnderlingsTrögerTest(){
-        var list: MutableList<String> = mutableListOf()
+        val list: MutableList<String> = mutableListOf()
         val underlings: MutableList<String>? = nh.getTomteHierarki("Tröger", nh.nisseMapByName, list)
         if (underlings != null) {
             assertEquals(underlings.size, 0)
